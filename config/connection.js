@@ -2,20 +2,22 @@
 
 const mysql = require("mysql");
 
-// Initialise the connection object
-let connectionSettings = {
+var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
-    password: "",
-    database: "employeesDB"
-};
+    password: "root",
+    database: "burgers_db"
+});
 
-// Create the connection information for the SQL database
-function getConnection(connectionSettings) {
-    return mysql.createConnection(connectionSettings);
-}
+// Make connection.
+connection.connect(function(err) {
+    if (err) {
+        console.error("error connecting: " + err.stack);
+        return;
+    }
+    console.log("connected as id " + connection.threadId);
+});
 
-module.exports = {
-    getConnection
-}
+// Export connection for our ORM to use.
+module.exports = connection;
