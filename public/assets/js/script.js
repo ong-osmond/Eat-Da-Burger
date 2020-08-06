@@ -29,17 +29,21 @@ $(function() {
             name: $("#ca").val().trim()
         };
 
-        // Send the POST request.
-        $.ajax("/api/burgers", {
-            type: "POST",
-            data: newBurger
-        }).then(
-            function() {
-                console.log("created new burger");
-                // Reload the page to get the updated list
-                location.reload();
-            }
-        );
+        if (newBurger.name == "") {
+            alert("Please enter a burger name!");
+        } else {
+            // Send the POST request.
+            $.ajax("/api/burgers", {
+                type: "POST",
+                data: newBurger
+            }).then(
+                function() {
+                    console.log("created new burger");
+                    // Reload the page to get the updated list
+                    location.reload();
+                }
+            );
+        }
     });
 
     $(".delete-burger").on("click", function(event) {
