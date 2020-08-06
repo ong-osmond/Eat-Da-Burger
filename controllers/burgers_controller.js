@@ -1,9 +1,13 @@
+/*jshint esversion: 6 */
+
 const express = require("express");
 const burger = require("../models/burger.js");
 
 const router = express.Router();
 
 // Create all our routes and set up logic within those routes where required.
+
+// Get all burgers
 router.get("/burgers", function(request, response) {
     burger.selectAll(function(data) {
         response.render("index", { burgers: data });
@@ -26,7 +30,7 @@ router.post("/api/burgers", function(req, res) {
 
 // Update the burger devoured status
 router.put("/api/burgers/:id", function(req, res) {
-    var condition = "id = " + req.params.id;
+    let condition = "id = " + req.params.id;
     console.log("condition", condition);
     burger.update({
             devoured: req.body.devoured
@@ -43,9 +47,9 @@ router.put("/api/burgers/:id", function(req, res) {
     );
 });
 
-
+// Delete a burger
 router.delete("/api/burgers/:id", function(req, res) {
-    var condition = "id = " + req.params.id;
+    let condition = "id = " + req.params.id;
 
     burger.delete(condition, function(result) {
         if (result.affectedRows == 0) {

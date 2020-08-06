@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 const orm = require("../config/orm.js");
 
 const burger = {
@@ -26,8 +28,6 @@ const burger = {
             cb(res);
         });
     }
-
-
 
 };
 

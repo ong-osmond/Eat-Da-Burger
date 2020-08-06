@@ -1,10 +1,12 @@
+/*jshint esversion: 6 */
+
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
     $(".change-devoured").on("click", function(event) {
-        var id = $(this).data("id");
-        var newDevoured = !($(this).data("devoured"));
+        let id = $(this).data("id");
+        let newDevoured = !($(this).data("devoured"));
 
-        var newDevouredState = {
+        let newDevouredState = {
             devoured: newDevoured
         };
 
@@ -25,7 +27,7 @@ $(function() {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
 
-        var newBurger = {
+        let newBurger = {
             name: $("#ca").val().trim()
         };
 
@@ -47,7 +49,7 @@ $(function() {
     });
 
     $(".delete-burger").on("click", function(event) {
-        var id = $(this).data("id");
+        let id = $(this).data("id");
 
         // Send the DELETE request.
         $.ajax("/api/burgers/" + id, {
