@@ -1,12 +1,16 @@
-<h1>Burgers!</h1>
+<div class="col-lg-12">
+  <div class="section_title text-center mb-180">
+    <span style="font-size: 0.5in;">Eat Da Burger!</span>
+  </div>
+</div>
 
 <div class="row">
+  <div class="section_title col-xl-5 col-md-5 col-lg-5">
+    <div class="info">
+      <h1>Burgers to devour!</h1>
+    </div>
 
-  <div class="column">
-
-    <h2>Burgers to devour!</h2>
-
-    <ul>
+    <ul class="room_heading_inner">
       {{#each burgers}}
       {{#unless devoured}}
       {{> burgers/burger-block devoured=false}}
@@ -16,11 +20,12 @@
 
   </div>
 
-  <div class="column">
+  <div class="section_title col-xl-5 col-md-5 col-lg-5">
+    <div class="info">
+      <h1>Burgers already devoured!</h1>
+    </div>
 
-    <h2>Burgers already devoured!</h2>
-
-    <ul>
+    <ul class="room_heading_inner">
       {{#each burgers}}
       {{#if devoured}}
       {{> burgers/burger-block devoured=true}}
@@ -32,11 +37,18 @@
 
 </div>
 
-<h2>Add a Burger</h2>
-<form class="create-form">
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
+<br>
+
+<div class="row">
+<div class="section_title col-xl-6 col-md-6 col-lg-6">
+  <div class="info">
+    <h1>Add a Burger:</h1>
   </div>
-  <button type="submit">Add Burger</button>
-</form>
+  <form class="create-form">
+    <div class="form-group">
+      <label for="ca">Burger Name:</label>
+      <input type="text" id="ca" name="name">
+    </div>
+    <button type="submit" class="boxed-btn3">Add Burger</button>
+  </form>
+</div>
