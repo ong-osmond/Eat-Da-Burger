@@ -14,7 +14,6 @@ router.get("/burgers", function(request, response) {
     });
 });
 
-
 // Add a burger defaulted to devoured = false
 router.post("/api/burgers", function(req, res) {
     burger.create([
@@ -26,7 +25,6 @@ router.post("/api/burgers", function(req, res) {
         res.json({ id: result.insertId });
     });
 });
-
 
 // Update the burger devoured status
 router.put("/api/burgers/:id", function(req, res) {
@@ -61,5 +59,9 @@ router.delete("/api/burgers/:id", function(req, res) {
     });
 });
 
+// Route to home page if user does not enter an endpoint
+router.get("*", function(request, response) {
+    response.redirect('/burgers');
+});
 
 module.exports = router;
