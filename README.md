@@ -19,13 +19,14 @@ Access the application through this link: https://damp-mesa-71184.herokuapp.com/
 1. Clone the Eat-Da-Burger project files to your local machine using this link: https://github.com/ong-osmond/Eat-Da-Burger.git  
 2. Install NODE.js on your machine. Find the latest version on https://nodejs.org/en/
 3. Open Git Bash or any Command Line tool and type in "NPM INSTALL". 
-4. Install the Inquirer module by typing in "NPM INSTALL EXPRESS".
-5. Install the MYSQL module by typing in "NPM INSTALL MYSQL".
-6. Install MySQL Server on your machine. Set the host to "localhost" and the port to "3306". Create a user with Standard Authentication Type. 
-7. On the project's db folder, use the "SCHEMA.SQL" and "SEEDS.SQL" file to create the database and set up initial data.
-8. Start your MySQL server before using the app. 
+4. Install the Express module by typing in "NPM INSTALL EXPRESS".
+5. Install the Express Handlebars module by typing in "NPM INSTALL EXPRESS-HANDLEBARS".
+6. Install the MySQL module by typing in "NPM INSTALL MYSQL".
+7. Install MySQL Server on your machine. Set the host to "localhost" and the port to "3306". Create a user with Standard Authentication Type. 
+8. From the project's db folder, use the "SCHEMA.SQL" and "SEEDS.SQL" file contents to create the database and set up initial data.
+9. Start your MySQL server before using the app. 
 
-Note: The config "CONNECTION.JS" file handles the connections in the Heroku environment. The project preview uses the JAWSDB_URL MYSQL add-on where the db SQL files have already been set up.
+Note: The config "CONNECTION.JS" file handles the connections in the Heroku environment. The project preview uses the JAWSDB_URL MYSQL add-on where the db SQL data have already been set up.
 
 ## Usage: 
 
