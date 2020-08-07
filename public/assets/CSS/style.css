@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800|Pacifico|Paytone+One&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Paytone One:300,400,500,600,700,800,900&display=swap");
 
 /* line 1, ../../Arafath/CL/December/229. Restaurant (Burger)/HTML/scss/_extend.scss */
 
@@ -37,7 +37,7 @@
 /* line 4, ../../Arafath/CL/December/229. Restaurant (Burger)/HTML/scss/theme-default.scss */
 
 body {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Paytone One', sans-serif;
     font-weight: normal;
     font-style: normal;
     background-color: burlywood;
@@ -111,7 +111,7 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Paytone One', sans-serif;
     color: #1F1F1F;
 }
 
@@ -151,7 +151,7 @@ p {
     line-height: 28px;
     color: #4D4D4D;
     margin-bottom: 13px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Paytone One', sans-serif;
 }
 
 

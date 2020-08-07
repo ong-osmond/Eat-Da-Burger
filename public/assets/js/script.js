@@ -2,14 +2,14 @@
 
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
+
+    // Moving the burgers across the two columns
     $(".change-devoured").on("click", function(event) {
         let id = $(this).data("id");
         let newDevoured = !($(this).data("devoured"));
-
         let newDevouredState = {
             devoured: newDevoured
         };
-
         // Send the PUT request.
         $.ajax("/api/burgers/" + id, {
             type: "PUT",
@@ -23,6 +23,7 @@ $(function() {
         );
     });
 
+    // Add a burger
     $(".create-form").on("submit", function(event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
@@ -30,7 +31,6 @@ $(function() {
         let newBurger = {
             name: $("#ca").val().trim()
         };
-
         if (newBurger.name == "") {
             alert("Please enter a burger name!");
         } else {
@@ -48,9 +48,9 @@ $(function() {
         }
     });
 
+    // Remove a burger
     $(".delete-burger").on("click", function(event) {
         let id = $(this).data("id");
-
         // Send the DELETE request.
         $.ajax("/api/burgers/" + id, {
             type: "DELETE"

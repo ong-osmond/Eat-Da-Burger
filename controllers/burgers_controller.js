@@ -15,46 +15,45 @@ router.get("/burgers", function(request, response) {
 });
 
 // Add a burger defaulted to devoured = false
-router.post("/api/burgers", function(req, res) {
+router.post("/api/burgers", function(request, response) {
     burger.create([
         "burger_name", "devoured"
     ], [
-        req.body.name, false
+        request.body.name, false
     ], function(result) {
-        // Send back the ID of the new quote
-        res.json({ id: result.insertId });
+        // Send back the ID of the new burger
+        response.json({ id: result.insertId });
     });
 });
 
 // Update the burger devoured status
-router.put("/api/burgers/:id", function(req, res) {
-    let condition = "id = " + req.params.id;
+router.put("/api/burgers/:id", function(request, response) {
+    let condition = "id = " + request.params.id;
     console.log("condition", condition);
     burger.update({
-            devoured: req.body.devoured
+            devoured: request.body.devoured
         },
         condition,
         function(result) {
             if (result.changedRows === 0) {
                 // If no rows were changed, then the ID must not exist, so 404
-                return res.status(404).end();
+                return response.status(404).end();
             }
-            res.status(200).end();
+            response.status(200).end();
 
         }
     );
 });
 
 // Delete a burger
-router.delete("/api/burgers/:id", function(req, res) {
-    let condition = "id = " + req.params.id;
-
+router.delete("/api/burgers/:id", function(request, response) {
+    let condition = "id = " + request.params.id;
     burger.delete(condition, function(result) {
         if (result.affectedRows == 0) {
             // If no rows were changed, then the ID must not exist, so 404
-            return res.status(404).end();
+            return response.status(404).end();
         } else {
-            res.status(200).end();
+            response.status(200).end();
         }
     });
 });
