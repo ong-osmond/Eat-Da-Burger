@@ -31,6 +31,7 @@ $(function() {
         let newBurger = {
             name: $("#ca").val().trim()
         };
+<<<<<<< HEAD
         if (newBurger.name == "") {
             alert("Please enter a burger name!");
         } else {
@@ -45,6 +46,48 @@ $(function() {
                     location.reload();
                 }
             );
+=======
+
+        if (newBurger.name == "") {
+            alert("Please enter a burger name!");
+        } else {
+            // Check if name has naughty words! Call an external API!
+            let checkNameResult =
+                $.ajax({
+                    "async": false,
+                    "crossDomain": true,
+                    "url": `https://community-purgomalum.p.rapidapi.com/containsprofanity?text=${newBurger.name}`,
+                    "method": "GET",
+                    "headers": {
+                        "x-rapidapi-host": "community-purgomalum.p.rapidapi.com",
+                        "x-rapidapi-key": "d17bca8126msh409010c4680f5aap169ce0jsnf3966f718bbf"
+                    },
+                    "success": function(data) {
+                        // Call this function on success
+                        return data;
+                    },
+                    "error": function() {
+                        // Call this function on error
+                        alert("Hmmm... I'm not sure about that name...");
+                        return;
+                    }
+                });
+            if (checkNameResult.responseText == "false") {
+                // Send the POST request.
+                $.ajax("/api/burgers", {
+                    type: "POST",
+                    data: newBurger
+                }).then(
+                    function() {
+                        console.log("created new burger");
+                        // Reload the page to get the updated list
+                        location.reload();
+                    }
+                );
+            } else {
+                alert("That name is not allowed! Cheeky!");
+            }
+>>>>>>> parent of 42ff2d1... Added employees table with sorting function
         }
     });
 
